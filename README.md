@@ -167,3 +167,39 @@ steps:
 6. Send us a pull request and that's it, you're in the Pantheon!
 =======
 # PA3-Pantheon
+Setup
+clone repository:
+```
+git clone https://github.com/severo-enriquez/PA3-Pantheon.git
+cd PA3-Pantheon
+```
+Generate Mahimahi traces:
+```
+python2 tests/generate_trace.py 1 200
+python2 tests/generate_trace.py 50 10
+```
+Run experiments:
+repeat the following for each scheme and trace pair:
+```
+timeout 60s mm-delay <delay> mm-link tests/<rate>mbps_data.trace tests/<rate>mbps_ack.trace \
+  --uplink-log=experiment_logs/<rate>mbps_<scheme>_uplink.log \
+  --downlink-log=experiment_logs/<rate>mbps_<scheme>_downlink.log \
+  -- \
+  python2 src/experiments/tunnel_manager.py \
+  --scheme <scheme> \
+  --data-dir experiment_logs/<rate>mbps_<scheme>
+```
+Generate graphs:
+```
+python2 plot_all_throughput_py2.py
+python2 plot_time_series_loss_py2.py
+python2 plot_avg_rtt_py2.py
+python2 plot_loss_rate_py2.py
+python2 rtt_vs_throughput_scatter_py2.py experiment_logs/.../uplink.log experiment_logs/.../downlink.log  # All schemes
+```
+Generated plots include:
+combined_throughput_all.png
+loss_time_series.png
+avg_rtt_configured.png
+loss_rate.png
+rtt_vs_throughput.png
