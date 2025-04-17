@@ -1,0 +1,13 @@
+{
+  "cc_schemes": ["cubic"],
+  "run_times": {
+    "cubic": 60
+  },
+  "start_time": 0,
+  "flows": {
+    "cubic": 1
+  },
+  "runtime": 60,
+  "mode": "local",
+  "interval": 1
+}

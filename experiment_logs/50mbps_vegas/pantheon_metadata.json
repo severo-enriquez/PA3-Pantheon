@@ -1,0 +1,13 @@
+{
+  "cc_schemes": ["vegas"],
+  "run_times": {
+    "vegas": 60
+  },
+  "start_time": 0,
+  "flows": {
+    "vegas": 1
+  },
+  "runtime": 60,
+  "mode": "local",
+  "interval": 1
+}

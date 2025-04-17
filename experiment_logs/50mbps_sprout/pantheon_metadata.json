@@ -1,0 +1,13 @@
+{
+  "cc_schemes": ["sprout"],
+  "run_times": {
+    "sprout": 60
+  },
+  "start_time": 0,
+  "flows": {
+    "sprout": 1
+  },
+  "runtime": 60,
+  "mode": "local",
+  "interval": 1
+}
